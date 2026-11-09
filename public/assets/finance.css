@@ -1,0 +1,110 @@
+/* Warga/Bendahara styles use the shared portal shell, without affecting RT/public screens. */
+.finance-shell .rt-brand-mark{border-radius:12px;background:#145226}
+.finance-shell .rt-card{border-radius:18px}
+.finance-shell .finance-account-text{display:flex;flex-direction:column;align-items:flex-end;max-width:360px;overflow-wrap:anywhere}
+.finance-shell .finance-account-text small{font-size:10px;line-height:1.4}
+.finance-shell .finance-card{padding:28px}
+.finance-shell .finance-hero{padding:36px;background:linear-gradient(120deg,#2f6b3c,#145226);border-radius:18px;color:white;margin-bottom:32px;box-shadow:0 3px 6px #0002}
+.finance-shell .finance-hero>span{display:inline-block;font-size:11px;letter-spacing:.06em;font-weight:600;padding:4px 12px;background:#ffffff20;border-radius:99px;margin-bottom:12px}
+.finance-shell .finance-hero h1{font-size:32px}
+.finance-shell .finance-hero p{margin-bottom:0;color:#e1f0d6}
+.finance-shell .finance-tile{height:100%;padding:18px 16px;background:#f1f3ff;border-radius:12px;overflow-wrap:anywhere}
+.finance-shell .finance-tile small{display:block;font-size:11px;text-transform:uppercase;color:#667085;margin-bottom:10px;letter-spacing:.025em}
+.finance-shell .finance-tile strong{display:block;font-size:16px}
+.finance-shell .finance-stat{height:100%;padding:26px}
+.finance-shell .finance-stat h2{font-size:13px;font-weight:600;color:#667085;letter-spacing:.035em;text-transform:uppercase;margin-bottom:22px}
+.finance-shell .finance-stat strong{display:block;font-size:25px;margin-bottom:6px;line-height:1.3}
+.finance-shell .finance-stat b{display:block;font-size:20px;margin-bottom:14px;color:#145226}
+.finance-shell .finance-stat p{font-size:12px;color:#667085;margin:0}
+.finance-shell .finance-stat-pending b{color:#92400e}
+.finance-shell .finance-stat-followup b{color:#374151}
+.finance-shell .finance-note{background:#f1f3ff;border-radius:12px;padding:20px;color:#4b5563;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.finance-shell .finance-note h2{font-size:16px;color:#374151;margin-bottom:16px}
+.finance-shell .finance-note dt{font-size:12px;font-weight:400;color:#667085}
+.finance-shell .finance-note dd{font-size:15px;font-weight:600;margin-bottom:0;color:#111827;overflow-wrap:anywhere}
+.finance-shell .finance-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;color:#516538;text-transform:uppercase;margin-bottom:10px}
+.finance-shell .finance-card-heading{padding:24px 22px}
+.finance-shell .finance-card-heading h2{margin:0}
+.finance-shell .finance-invoice-list{overflow:hidden}
+.finance-shell .finance-badge{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:99px;padding:5px 12px;font-size:11px;font-weight:600;line-height:1.4;align-self:flex-start;white-space:normal}
+.finance-shell .finance-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+.finance-shell .finance-unpaid,.finance-shell .finance-pending{background:#fff2d8;color:#a45a00}
+.finance-shell .finance-paid,.finance-shell .finance-accepted{background:#e5f5dd;color:#176137}
+.finance-shell .finance-rejected{background:#ffe2e0;color:#b91c1c}
+.finance-shell .finance-pay-card{max-width:860px;margin-left:auto;margin-right:auto}
+.finance-shell .finance-pay-card h1{font-size:28px}
+.finance-shell .finance-amount{background:#f1f3ff;border-radius:12px;padding:24px;margin:24px 0}
+.finance-shell .finance-amount small{display:block;color:#667085;margin-bottom:8px}
+.finance-shell .finance-amount strong{display:block;font-size:38px;font-weight:700;color:#145226;line-height:1.25}
+.finance-shell .finance-amount p{font-size:13px;color:#4b5563;margin:12px 0 0}
+.finance-shell .finance-payment-form h2{font-size:18px;margin-bottom:8px}
+.finance-shell .finance-payment-form .form-label{font-size:13px}
+.finance-shell .finance-payment-form .form-control{min-height:46px;font-size:16px;line-height:1.5}
+.finance-shell .finance-upload{padding:20px;border:1px dashed #c0c9bd;border-radius:12px}
+.finance-shell .finance-status-card{max-width:680px;margin:0 auto}
+.finance-shell .finance-status-card h1{font-size:25px;margin-bottom:14px}
+.finance-shell .finance-status-icon{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#fff6df;color:#d18a00;margin:4px auto 20px}
+.finance-shell .finance-status-icon .login-icon{width:34px;height:34px}
+.finance-shell .finance-icon-rejected{background:#ffe2e0;color:#ef4444}
+.finance-shell .finance-icon-accepted{background:#e5f2d4;color:#145226}
+.finance-shell .finance-status-card .finance-note{margin-top:28px}
+.finance-shell .finance-status-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:24px}
+.finance-shell .finance-history{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #edf0f3;font-size:12px}
+.finance-shell .finance-history p{width:100%}
+.finance-shell .finance-history a{min-height:44px;display:inline-flex;align-items:center}
+.finance-shell .finance-proof-preview{display:grid;place-items:center;background:#f1f3ff;border-radius:12px;padding:18px;min-height:240px}
+.finance-shell .finance-proof-preview img{display:block;max-width:100%;max-height:620px;object-fit:contain;border-radius:8px}
+.finance-shell .finance-proof-placeholder{background:#f1f3ff;border-radius:12px;padding:40px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center}
+.finance-shell .finance-proof-placeholder .login-icon{width:40px;height:40px;color:#516538}
+.finance-shell .finance-proof-placeholder p{margin:0;font-size:14px}
+.finance-shell .form-check-input{width:18px;height:18px}
+.finance-shell .form-check-label{font-size:14px;line-height:1.6;padding-left:6px}
+.finance-shell .rt-data-list>div{padding:14px 0;gap:16px}
+.finance-shell .rt-data-list dt{font-size:13px;flex-shrink:1}
+.finance-shell .rt-data-list dd{font-size:14px}
+.finance-shell .finance-note .rt-data-list dd{font-size:14px}
+.finance-shell .rt-modal .finance-payment-form{padding:0}
+.finance-shell .rt-modal .finance-payment-form h2{font-size:16px}
+.finance-shell .rt-modal .finance-note{padding:16px}
+@media(min-width:768px){.finance-shell .finance-wide-table{table-layout:auto}.finance-shell .finance-wide-table td,.finance-shell .finance-wide-table th{padding-left:12px;padding-right:12px}.finance-shell .finance-wide-table td{font-size:12px}.finance-shell .finance-wide-table th{font-size:10px}}
+@media(max-width:1100px) and (min-width:768px){.finance-shell .rt-account>span:first-child{max-width:260px}.finance-shell .finance-wide-table .btn{padding:10px;font-size:11px}.finance-shell .finance-wide-table .finance-badge{padding:4px 8px}}
+@media(max-width:767.98px){
+ .finance-shell .finance-card{padding:24px 20px}
+ .finance-shell .finance-hero{padding:28px 22px;margin-bottom:24px}
+ .finance-shell .finance-hero h1{font-size:28px}
+ .finance-shell .finance-hero p{font-size:14px}
+ .finance-shell .finance-note{padding:16px}
+ .finance-shell .finance-stat{padding:24px}
+ .finance-shell .finance-stat h2{margin-bottom:16px}
+ .finance-shell .finance-pay-card h1{font-size:25px}
+ .finance-shell .finance-amount{padding:20px}
+ .finance-shell .finance-amount strong{font-size:32px;overflow-wrap:anywhere}
+ .finance-shell .finance-upload{padding:16px}
+ .finance-shell .finance-status-actions{flex-direction:column;align-items:stretch}
+ .finance-shell .finance-account-text{max-width:280px}
+ .finance-shell .rt-account{max-width:100%}
+ .finance-shell .finance-card-heading{padding:20px}
+ .finance-shell .finance-proof-preview{padding:10px}
+ .finance-shell .form-check-label{font-size:13px}
+ .finance-shell .finance-invoice-list .rt-table .btn{min-height:44px}
+}
+@media(min-width:768px) and (max-width:1099.98px){
+ .finance-shell .rt-table,.finance-shell .rt-table tbody,.finance-shell .rt-table tr,.finance-shell .rt-table td{display:block;width:100%}
+ .finance-shell .rt-table thead{display:none}
+ .finance-shell .rt-table tr{padding:18px 22px;border-bottom:1px solid #edf0f3}
+ .finance-shell .rt-table tbody td{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:8px 0;border:0;text-align:left}
+ .finance-shell .rt-table td[data-label]::before{content:attr(data-label);font-size:12px;color:#667085}
+ .finance-shell .rt-table td[data-label="Aksi"]{display:block}
+ .finance-shell .rt-table td[data-label="Aksi"]::before{display:none}
+ .finance-shell .rt-table td[data-label="Aksi"] .btn{width:100%}
+}
+.finance-shell .rt-table th{overflow-wrap:anywhere}
+/* Resident status tokens: scoped to residents, never navigation or primary buttons. */
+.resident-shell .finance-stat-paid,.resident-shell .finance-paid,.resident-shell .finance-accepted{--status-bg:#edf8ef;--status-border:#b7dbbf;--status-ink:#18552c}
+.resident-shell .finance-stat-pending,.resident-shell .finance-pending{--status-bg:#fff7e5;--status-border:#eed095;--status-ink:#824600}
+.resident-shell .finance-stat-followup,.resident-shell .finance-outstanding,.resident-shell .finance-unpaid,.resident-shell .finance-rejected{--status-bg:#fff0ee;--status-border:#efb9b4;--status-ink:#992b26}
+.resident-shell .finance-stat,.resident-shell .finance-badge{background:var(--status-bg);border:1px solid var(--status-border);color:var(--status-ink)}
+.resident-shell .finance-stat h2,.resident-shell .finance-stat strong,.resident-shell .finance-stat b,.resident-shell .finance-stat p{color:var(--status-ink)}
+.resident-shell .finance-stat h2{display:flex;align-items:center;gap:8px;line-height:1.5}
+.resident-shell .finance-stat h2 .login-icon{width:22px;height:22px;flex-shrink:0;color:inherit}
+.resident-shell .finance-stat strong,.resident-shell .finance-stat b{overflow-wrap:anywhere}

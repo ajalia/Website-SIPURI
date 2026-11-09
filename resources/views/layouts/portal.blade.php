@@ -1,0 +1,13 @@
+@extends('layouts.base')
+@php
+ $viewer=auth()->user();
+ $homeRoute=match($viewer->role){\App\Enums\Role::Admin=>'admin.dashboard',\App\Enums\Role::Rt=>'rt.dashboard',\App\Enums\Role::Treasurer=>'treasurer.dashboard',\App\Enums\Role::Resident=>'resident.dashboard'};
+ $homeLabel=match($viewer->role){\App\Enums\Role::Admin=>'Beranda Admin',\App\Enums\Role::Rt=>'Beranda RT',\App\Enums\Role::Treasurer=>'Beranda Bendahara',\App\Enums\Role::Resident=>'Beranda Warga'};
+@endphp
+@section('shell')
+<aside class="sidebar offcanvas-md offcanvas-start" tabindex="-1" id="portalMenu" aria-label="Menu {{ $viewer->role->label() }}"><div class="sidebar-brand"><x-brand/><button type="button" class="btn-close d-md-none" data-bs-dismiss="offcanvas" data-bs-target="#portalMenu" aria-label="Tutup menu"></button></div><nav class="sidebar-nav" aria-label="Menu utama"><a class="nav-item {{ request()->routeIs($homeRoute)?'active':'' }}" href="{{ route($homeRoute) }}"><span aria-hidden="true">⌂</span><span>{{ $homeLabel }}</span></a>
+@if($viewer->role===\App\Enums\Role::Admin)<a class="nav-item {{ request()->routeIs('admin.content.*')?'active':'' }}" href="{{ route('admin.content.index') }}"><x-login-icon name="building" width="20" height="20" class="flex-shrink-0"/> Konten Publik</a><a class="nav-item {{ request()->routeIs('admin.reports*')?'active':'' }}" href="{{ route('admin.reports') }}"><x-login-icon name="wallet" width="20" height="20" class="flex-shrink-0"/> Penerbitan Laporan</a><a class="nav-item {{ request()->routeIs('admin.accounts*','admin.resident-recovery','account.reset.*')?'active':'' }}" href="{{ route('admin.accounts') }}">Kelola Akun</a>@endif
+@if($viewer->role===\App\Enums\Role::Rt)<a class="nav-item" href="{{ route('rt.registrations.index') }}">Verifikasi Warga</a><a class="nav-item" href="{{ route('rt.houses.index') }}">Data Warga</a>@endif
+</nav><form data-logout-trigger-form action="{{ route('logout') }}" method="post" class="logout-form">@csrf<button class="btn logout-button" type="submit">Keluar</button></form></aside>
+<div class="portal-body"><header class="portal-header"><div class="d-flex align-items-center gap-3"><button class="btn menu-button d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#portalMenu" aria-controls="portalMenu">Menu</button><span class="portal-title">@yield('page-title',$homeLabel)</span></div><div class="d-flex align-items-center gap-3"><span class="account-badge">{{ $viewer->role->label() }} · RW 07</span><x-account-menu/></div></header><main id="main" class="portal-main">@include('partials.messages') @yield('content')</main></div>
+@endsection

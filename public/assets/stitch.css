@@ -1,0 +1,161 @@
+/* Shared Stitch presentation, scoped away from role dashboards. */
+.stitch-page{--primary:#145226;--primary-dark:#103f1e;--bs-link-color:#145226;--bs-link-color-rgb:20,82,38}
+.stitch-page *, .stitch-page *::before, .stitch-page *::after{box-sizing:border-box}
+.stitch-page .stitch-container{width:100%;max-width:480px;min-width:0}
+.stitch-page .stitch-wide{max-width:640px}
+.stitch-page .stitch-card{max-width:none;padding:40px;box-shadow:0 12px 20px -10px #11182730}
+.stitch-page .stitch-form{margin-top:24px}
+.stitch-page .stitch-field{margin-bottom:22px;min-width:0}
+.stitch-page .stitch-field .form-control,.stitch-page .form-select{height:50px;min-height:50px;padding:12px 16px;border-radius:9px;border-color:#f0f1f4;box-shadow:0 1px 2px #11182708;font-size:16px}
+.stitch-page .stitch-field .position-relative .form-control{padding-right:52px}
+.stitch-page .form-select{padding-right:36px;background-color:white}
+.stitch-page .form-select:focus{border-color:#145226;box-shadow:0 0 0 3px #14522620}
+.stitch-page .stitch-field .login-eye{top:3px;right:3px}
+.stitch-page .stitch-field .form-control.is-invalid,.stitch-page .form-select.is-invalid{border-color:#dc3545}
+.stitch-page .stitch-required{font-size:11px;color:#4b5563;white-space:nowrap}
+.stitch-page .form-text{font-size:13px;line-height:1.6}
+.stitch-page .stitch-notice{display:flex;align-items:flex-start;gap:10px;background:#f1f3ff;border-radius:12px;padding:18px;color:#414940;font-size:14px;line-height:1.6;margin:24px 0;overflow-wrap:anywhere}
+.stitch-page .stitch-notice>.login-icon{margin-top:3px;color:#145226;width:18px;height:18px}
+.stitch-page .stitch-notice strong{display:block;color:#145226;margin-bottom:2px;font-size:14px}
+.stitch-page .stitch-notice-error{background:#fff0f0;color:#6e2727}
+.stitch-page .stitch-notice-error strong,.stitch-page .stitch-notice-error>.login-icon{color:#b91c1c}
+.stitch-page .stitch-notice-sage{background:#ecf6df;color:#485d33}
+.stitch-page .stitch-help{padding:12px 18px;justify-content:center;text-align:center;margin-bottom:0;font-size:13px}
+.stitch-page .stitch-status-icon{display:grid;place-items:center;background:#e5f2d4;color:#145226;width:64px;height:64px;margin:0 auto 18px;border-radius:50%}
+.stitch-page .stitch-status-icon>.login-icon{width:30px;height:30px}
+.stitch-page .stitch-icon-pending{background:#fff6d9;color:#b76b00;width:80px;height:80px}
+.stitch-page .stitch-icon-error{background:#ffeded;color:#b91c1c}
+.stitch-page .stitch-status-badge{display:inline-block;border-radius:999px;background:#fffae8;color:#965200;padding:5px 16px;font-size:12px;font-weight:600;letter-spacing:.025em}
+.stitch-page .stitch-badge-error{color:#b91c1c;background:#ffeded}
+.stitch-page .stitch-status-card,.stitch-page .stitch-revision-card{position:relative;overflow:hidden;padding-top:40px}
+.stitch-page .stitch-status-card::before,.stitch-page .stitch-revision-card::before{content:'';position:absolute;inset:0 0 auto;height:6px;background:linear-gradient(90deg,#f59e0b,#eab308,#516538)}
+.stitch-page .stitch-rejected::before{background:linear-gradient(90deg,#ef4444,#b91c1c)}
+.stitch-page .stitch-revision-card::before{background:linear-gradient(90deg,#145226,#516538)}
+.stitch-page .stitch-summary{background:#f7f7ff;border-radius:12px;padding:24px;margin:28px 0 24px}
+.stitch-page .stitch-summary h2{display:flex;align-items:center;gap:8px;text-transform:uppercase;font-size:12px;letter-spacing:.05em;color:#414940;margin:0 0 22px;font-weight:600}
+.stitch-page .stitch-summary h2 .login-icon{width:18px;color:#516538}
+.stitch-page .stitch-summary dt{font-size:12px;font-weight:400;color:#4b5563;margin-bottom:4px}
+.stitch-page .stitch-summary dd{font-size:15px;font-weight:600;margin:0;overflow-wrap:anywhere}
+.stitch-page .stitch-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;min-width:220px}
+.stitch-page .stitch-back-link{display:table;margin:10px auto 0;min-height:44px;align-content:center;color:#4b5563}
+.stitch-page .stitch-context{background:#ffffffb3;border-radius:12px;padding:22px 26px;margin-top:28px;color:#4b5563;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.stitch-page .stitch-context p{margin-bottom:6px}
+.stitch-page .stitch-context .login-icon{color:#516538;width:16px;height:16px}
+.stitch-page .stitch-breadcrumb{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;margin:0 0 18px;color:#4b5563}
+.stitch-page .stitch-breadcrumb a{color:#4b5563;text-decoration:none}
+.stitch-page .stitch-edit-icon{display:grid;place-items:center;flex-shrink:0;width:46px;height:46px;background:#2f6b3c;color:#fff;border-radius:12px}
+
+.stitch-page .stitch-revision-card h1{font-size:24px}
+.stitch-page .stitch-revision-card .form-control,.stitch-page .stitch-revision-card .form-select{background-color:#f1f3ff}
+.stitch-page .stitch-revision-card .form-control[readonly]{background:#e9edff;color:#4b5563}
+.stitch-page .stitch-form-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:30px}
+.stitch-page .stitch-cancel{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;color:#4b5563;text-decoration:none}
+.stitch-page.password-page h1{font-size:24px}
+.stitch-page.password-page .stitch-card{padding:32px}
+.stitch-page .login-header-inner{row-gap:8px}
+.stitch-page .login-header nav form .btn{padding:8px 16px;min-height:44px}
+.stitch-page .public-navigation{gap:12px;align-items:center}
+.stitch-page .public-navigation>a{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;min-height:44px;text-decoration:none;color:#414940;font-size:14px;font-weight:500}
+.stitch-page .public-navigation>a[aria-current]{border-radius:99px;background:#f1f3ff;color:#145226}
+.stitch-page .public-navigation>a.btn{color:white;min-width:90px}
+.stitch-page .stitch-menu{background:#e5f2d4;color:#145226;padding:10px}
+.stitch-page.home-page .login-main{display:block;padding:0}
+.stitch-page.home-page .stitch-container{max-width:none}
+.stitch-page .public-width{width:100%;max-width:1280px;padding-left:32px;padding-right:32px;margin-left:auto;margin-right:auto}
+.stitch-page .public-hero{background:#2f6b3c;color:white;padding:56px 0 88px;border-radius:0 0 50% 5% / 0 0 6% 3%}
+.stitch-page .public-hero .login-badge,.stitch-page .public-service .login-badge{color:#e5f2d4;background:#ffffff20}
+.stitch-page .public-hero h1{font-size:clamp(36px,4vw,54px);line-height:1.2;margin-bottom:20px;letter-spacing:-.035em;color:white}
+.stitch-page .public-hero p{font-size:18px;color:#e5eddc;max-width:560px}
+.stitch-page .public-hero-link{display:inline-flex;gap:8px;align-items:center;color:white;text-decoration:none;padding:10px 16px;min-height:44px}
+.stitch-page .public-trust{font-size:12px;color:#d3ebb2}
+.stitch-page .public-trust .login-icon{width:16px;height:16px}
+.stitch-page .public-hero-image,.stitch-page .public-profile-image{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 10px 20px #0000001a}
+.stitch-page .public-hero-image img{width:100%;height:340px;object-fit:cover;display:block}
+.stitch-page .public-hero-image figcaption{position:absolute;inset:auto 0 0;padding:35px 18px 18px;background:linear-gradient(transparent,#163b21e6);display:flex;flex-direction:column;font-size:13px}
+.stitch-page .public-hero-image figcaption strong{text-transform:uppercase;color:#d3ebb2;font-size:11px;letter-spacing:.05em}
+.stitch-page .public-image-chip{position:relative;display:table;margin:-6px 0 0 -12px;padding:4px 14px;border-radius:99px;background:white;color:#145226;font-size:11px;box-shadow:0 3px 8px #0002}
+.stitch-page .public-image-chip .login-icon{width:14px;height:14px}
+.stitch-page .public-register-strip{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;width:calc(100% - 64px);max-width:1100px;margin-top:-28px;background:white;border-radius:16px;padding:24px;box-shadow:0 10px 18px #1118271a}
+.stitch-page .public-register-strip strong{font-size:16px}
+.stitch-page .public-register-strip p{font-size:13px;color:#4b5563}
+.stitch-page .public-register-strip .btn{white-space:normal;flex-shrink:0}
+.stitch-page .public-round-icon{display:inline-grid;place-items:center;width:40px;height:40px;background:#d3ebb2;color:#2f6b3c;border-radius:50%;flex-shrink:0}
+.stitch-page .public-section{padding-top:80px;padding-bottom:80px;scroll-margin-top:24px}
+.stitch-page .public-section h2,.stitch-page .public-service h2{font-size:32px;font-weight:700;letter-spacing:-.025em;margin-bottom:14px}
+.stitch-page .public-description{color:#4b5563;max-width:680px;font-size:16px}
+.stitch-page .public-profile-image img{width:100%;height:510px;object-fit:cover;display:block}
+.stitch-page .public-profile-image figcaption{position:absolute;bottom:18px;left:18px;right:18px;background:#ffffffed;padding:12px 16px;border-radius:8px;font-size:14px;font-weight:600}
+.stitch-page .public-profile-image figcaption small{display:block;margin-left:24px;font-size:12px;font-weight:400;color:#4b5563}
+.stitch-page .public-feature{height:100%;background:white;border:1px solid #f0f1f3;border-radius:12px;padding:18px}
+.stitch-page .public-feature h3{font-size:16px;font-weight:600;margin:12px 0 8px}
+.stitch-page .public-feature p{font-size:13px;color:#4b5563;margin:0}
+.stitch-page .public-tinted{background:#f1f3ff}
+.stitch-page .public-section-heading{text-align:center;max-width:800px;margin:0 auto 40px}
+.stitch-page .public-section-heading p{color:#4b5563;margin:0}
+.stitch-page .public-content-card{height:100%;background:white;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden}
+.stitch-page .public-card-image{position:relative}
+.stitch-page .public-card-image img{width:100%;height:210px;object-fit:cover;display:block}
+.stitch-page .public-card-image>span{position:absolute;left:14px;top:14px;background:#ffffffed;border-radius:99px;padding:3px 10px;font-size:11px;color:#145226}
+.stitch-page .public-card-body{padding:24px}
+.stitch-page .public-content-card h3{font-size:18px;font-weight:600;margin-bottom:10px}
+.stitch-page .public-content-card p{font-size:14px;color:#4b5563}
+.stitch-page .public-availability{display:inline-block;background:#edf4e4;color:#425530;border-radius:99px;padding:4px 10px;font-size:11px}
+.stitch-page .public-empty-image{height:220px;background:#f1f3ff;color:#64748b;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-size:12px}
+.stitch-page .public-empty-image .login-icon{width:38px;height:38px;background:#e1e8fd;border-radius:50%;padding:8px;color:#516538}
+.stitch-page .public-avatar{display:grid;place-items:center;margin:0 auto 20px;background:#e1e8fd;color:#516538;width:76px;height:76px;border-radius:50%}
+.stitch-page .public-avatar .login-icon{width:36px;height:36px}
+.stitch-page .public-service-wrap{padding-top:16px;padding-bottom:80px}
+.stitch-page .public-service{background:linear-gradient(110deg,#2f6b3c,#365e36);border-radius:24px;padding:48px;color:white;box-shadow:0 8px 14px #1118271a}
+.stitch-page .public-service p{max-width:800px;color:#e5eddc}
+.stitch-page .public-service span:not(.login-badge){font-size:13px}
+.stitch-page .public-footer{background:#2f6b3c;color:#e5eddc;padding:64px 0 24px;font-size:14px}
+.stitch-page .public-footer .login-brand{color:white}
+.stitch-page .public-footer .login-brand small{color:#e5eddc}
+.stitch-page .public-footer .login-brand-mark{background:#d3ebb2;color:#2f6b3c}
+.stitch-page .public-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:16px}
+.stitch-page .public-footer nav{display:flex;flex-direction:column;align-items:flex-start}
+.stitch-page .public-footer nav a{color:#e5eddc;text-decoration:none;min-height:36px;display:inline-flex;align-items:center}
+.stitch-page .public-footer a:hover{text-decoration:underline}
+.stitch-page .public-footer-bottom{border-top:1px solid #ffffff24;margin-top:40px;padding-top:24px;font-size:12px}
+@media(max-width:991.98px){
+ .stitch-page .public-navigation{width:100%;padding-bottom:8px}
+ .stitch-page .public-navigation>a{display:flex;justify-content:flex-start;min-height:44px}
+ .stitch-page .public-navigation>a.btn{display:inline-flex;padding-left:24px;padding-right:24px;margin-top:8px}
+ .stitch-page .public-hero{padding-top:32px}
+ .stitch-page .public-hero-image img{height:340px}
+ .stitch-page .public-profile-image img{height:380px}
+}
+@media(max-width:575.98px){
+ .stitch-page .stitch-card{padding:28px 24px}
+ .stitch-page .stitch-container{min-width:0}
+ .stitch-page .login-header-inner{padding:10px 16px;column-gap:8px}
+ .stitch-page .login-header nav{gap:8px!important}
+ .stitch-page .login-header nav form .btn{padding:8px 12px;font-size:12px}
+ .stitch-page .login-back{max-width:125px;font-size:12px}
+ .stitch-page .stitch-notice{padding:14px;font-size:13px}
+ .stitch-page .stitch-summary{padding:20px}
+ .stitch-page .stitch-status-card h1{font-size:26px}
+ .stitch-page .stitch-form-actions{flex-direction:column-reverse;align-items:stretch;gap:8px}
+ .stitch-page .stitch-cancel{justify-content:center}
+ .stitch-page .stitch-context{padding:18px;font-size:12px}
+ .stitch-page.password-page .stitch-card{padding:28px 24px}
+ .stitch-page .public-width{padding-left:16px;padding-right:16px}
+ .stitch-page .public-section{padding-top:48px;padding-bottom:48px}
+ .stitch-page .public-hero{padding-bottom:60px;border-radius:0 0 35% 5% / 0 0 2% 2%}
+ .stitch-page .public-hero h1{font-size:36px}
+ .stitch-page .public-hero p{font-size:16px}
+ .stitch-page .public-hero>.row{--bs-gutter-x:0}
+ .stitch-page .public-hero-image img{height:260px}
+ .stitch-page .public-image-chip{margin-left:0}
+ .stitch-page .public-register-strip{width:calc(100% - 32px);padding:20px;flex-direction:column;align-items:stretch}
+ .stitch-page .public-register-strip .btn{width:100%}
+ .stitch-page .public-register-strip strong{font-size:15px}
+ .stitch-page .public-section h2,.stitch-page .public-service h2{font-size:28px}
+ .stitch-page .public-profile-image img{height:360px}
+ .stitch-page .public-section-heading{margin-bottom:28px}
+ .stitch-page .public-service-wrap{padding-bottom:48px}
+ .stitch-page .public-service{padding:28px 24px;border-radius:16px}
+ .stitch-page .public-footer{padding-top:40px}
+ .stitch-page .public-footer nav a{min-height:44px}
+ .stitch-page .login-footer-inner>span{white-space:normal}
+}

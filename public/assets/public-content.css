@@ -1,0 +1,6 @@
+/* Database content retains the approved public layout; no Admin/RT/dashboard selectors. */
+.stitch-page .public-content-text{white-space:pre-line;overflow-wrap:anywhere}
+.stitch-page .public-content-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:36px 24px;text-align:center;color:#4b5563}
+.stitch-page .public-content-empty>.login-icon{width:40px;height:40px;color:#516538}.stitch-page .public-content-empty p{margin:0}
+.stitch-page .public-avatar{overflow:hidden}.stitch-page .public-avatar>img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.stitch-page .public-card-body,.stitch-page .public-officers h3{overflow-wrap:anywhere}.stitch-page .public-availability{white-space:normal;line-height:1.7;overflow-wrap:anywhere}

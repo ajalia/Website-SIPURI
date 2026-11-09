@@ -1,0 +1,29 @@
+.account-menu .account-menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;border:0;border-radius:50%;color:#fff;background:#145226}
+.account-menu .account-menu-toggle>svg.login-icon{width:20px;height:20px;color:inherit}
+.account-menu .dropdown-menu{max-width:min(300px,calc(100vw - 32px));min-width:220px;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 8px 20px #11182714;z-index:1050}
+.account-menu .dropdown-item{white-space:normal;overflow-wrap:anywhere;min-height:44px;display:flex;align-items:center;font-size:14px}
+.account-menu .account-menu-name{font-size:12px;color:#4b5563;overflow-wrap:anywhere}
+.account-menu form{margin:0}
+.account-card{padding:32px;max-width:720px;margin:0 auto;min-width:0}
+.account-card h1{font-size:28px}
+.account-card .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;line-height:1.5;white-space:normal}
+.account-card .form-check-label{font-size:14px;padding-left:6px;line-height:1.6}
+.account-card .form-check-input{width:18px;height:18px}
+.account-password-form .stitch-field{margin-bottom:22px}
+.account-password-form .form-control{min-height:50px;font-size:16px;padding-right:52px}
+.account-password-form .login-eye{position:absolute;right:3px;top:3px;width:44px;height:44px;border:0;border-radius:50%;display:grid;place-items:center;color:#4b5563;background:transparent}
+.account-password-form .login-eye:hover{background:#f1f3ff}
+.account-password-form .login-eye .login-icon{width:20px;height:20px}
+.account-password-form .login-eye-slash{display:none;position:absolute;width:24px;height:2px;background:currentColor;transform:rotate(-45deg);box-shadow:0 0 0 1px #fff}
+.account-password-form .login-eye[aria-pressed=true] .login-eye-slash{display:block}
+.account-password-form .stitch-required{font-size:11px;color:#4b5563}
+.account-password-form .form-text{line-height:1.6}
+.account-temporary{font-family:monospace;font-size:18px;letter-spacing:.05em}
+@media(max-width:575.98px){.account-card{padding:24px 20px}.account-card h1{font-size:25px}.account-menu .dropdown-menu{min-width:200px}.account-password-form .form-label{font-size:13px}.account-password-form .stitch-required{font-size:10px}.account-card .data-list>div{gap:6px}}
+/* Shared logout dialog sits outside every shell and every other form. */
+.sipuri-logout-modal .modal-content{border-radius:18px}
+.sipuri-logout-modal .modal-footer{gap:8px;flex-wrap:wrap}
+.sipuri-logout-modal .modal-footer form{margin:0}
+.sipuri-logout-modal .btn,.sipuri-logout-modal .btn-close{min-height:44px}
+.sipuri-logout-modal .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:99px;padding:10px 22px;line-height:1.5}
+@media(max-width:390px){.sipuri-logout-modal .modal-footer{padding:12px}.sipuri-logout-modal .btn{padding:10px 18px}}

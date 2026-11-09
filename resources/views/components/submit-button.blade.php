@@ -1,0 +1,2 @@
+@props(['icon' => 'login', 'busy' => 'Menyimpan…'])
+<button {{ $attributes->class(['btn btn-primary login-submit d-inline-flex align-items-center justify-content-center gap-2']) }} type="submit" data-busy-label="{{ $busy }}"><x-login-icon :name="$icon" /><span data-submit-label>{{ $slot }}</span><span class="spinner-border spinner-border-sm d-none" data-submit-spinner aria-hidden="true"></span></button>
