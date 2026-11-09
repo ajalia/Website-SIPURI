@@ -1,0 +1,92 @@
+<?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountSecurityController;
+use App\Http\Controllers\AdminStaffController;
+use App\Http\Controllers\PublicContentController;
+use App\Http\Controllers\CashReportController;
+use App\Http\Controllers\{ResidentBillingController,TreasurerBillingController};
+use App\Http\Controllers\{AuthController,DashboardController,RegistrationController,RtRegistrationController,RtResidentController};
+Route::get('/',[PublicContentController::class,'home'])->name('home');
+Route::get('/gambar-konten/{filename}',[PublicContentController::class,'image'])->where('filename','[a-zA-Z0-9]{40}\\.(jpg|jpeg|png|webp)')->name('public-content.image');
+Route::view('/lupa-kata-sandi','auth.forgot')->name('password.help');
+Route::middleware('guest')->group(function(){
+ Route::get('/masuk',[AuthController::class,'loginForm'])->name('login');
+ Route::post('/masuk',[AuthController::class,'login'])->name('login.store')->middleware('throttle:30,1');
+ Route::get('/daftar',[AuthController::class,'registerForm'])->name('register');
+ Route::post('/daftar',[AuthController::class,'register'])->name('register.store')->middleware('throttle:10,1');
+});
+Route::middleware(['auth','credentials','account'])->group(function(){
+ Route::get('/pengaturan-akun',[AccountSecurityController::class,'settings'])->name('account.settings');
+ Route::put('/pengaturan-akun/kata-sandi',[AccountSecurityController::class,'change'])->name('account.password')->middleware('throttle:5,1');
+ Route::middleware('role:admin')->group(function(){
+  Route::get('/admin/konten-publik',[PublicContentController::class,'index'])->name('admin.content.index');
+  Route::get('/admin/konten-publik/{section}',[PublicContentController::class,'listing'])->name('admin.content.list');
+  Route::get('/admin/konten-publik/{section}/baru',[PublicContentController::class,'create'])->name('admin.content.create');
+  Route::post('/admin/konten-publik/{section}',[PublicContentController::class,'store'])->middleware('throttle:20,1')->name('admin.content.store');
+  Route::get('/admin/konten-publik/{section}/{content}/edit',[PublicContentController::class,'edit'])->name('admin.content.edit');
+  Route::put('/admin/konten-publik/{section}/{content}',[PublicContentController::class,'update'])->middleware('throttle:20,1')->name('admin.content.update');
+  Route::get('/admin/konten-publik/{section}/{content}/tampil',[PublicContentController::class,'confirm'])->name('admin.content.confirm');
+  Route::post('/admin/konten-publik/{section}/{content}/tampil',[PublicContentController::class,'visibility'])->middleware('throttle:20,1')->name('admin.content.visibility');
+  Route::get('/admin/akun',[AdminStaffController::class,'index'])->name('admin.accounts');
+  Route::post('/admin/akun',[AdminStaffController::class,'store'])->middleware('throttle:10,1')->name('admin.accounts.store');
+  Route::get('/admin/akun/pemulihan-warga',[AccountSecurityController::class,'accounts'])->name('admin.resident-recovery');
+  Route::get('/admin/akun/{target}',[AdminStaffController::class,'manage'])->name('admin.accounts.manage');
+  Route::put('/admin/akun/{target}',[AdminStaffController::class,'rename'])->middleware('throttle:20,1')->name('admin.accounts.rename');
+  Route::get('/admin/akun/{target}/status',[AdminStaffController::class,'confirmStatus'])->name('admin.accounts.status');
+  Route::post('/admin/akun/{target}/aktifkan',[AdminStaffController::class,'activate'])->middleware('throttle:10,1')->name('admin.accounts.activate');
+  Route::post('/admin/akun/{target}/nonaktifkan',[AdminStaffController::class,'deactivate'])->middleware('throttle:10,1')->name('admin.accounts.deactivate');
+ });
+ Route::get('/akun/{target}/pemulihan',[AccountSecurityController::class,'confirm'])->middleware('role:admin,rt')->name('account.reset.confirm');
+ Route::post('/akun/{target}/pemulihan',[AccountSecurityController::class,'reset'])->middleware(['role:admin,rt','throttle:5,1'])->name('account.reset.store');
+ Route::post('/keluar',[AuthController::class,'logout'])->name('logout');
+ Route::get('/kata-sandi-awal',[AuthController::class,'passwordForm'])->name('password.initial');
+ Route::post('/kata-sandi-awal',[AuthController::class,'changePassword'])->name('password.initial.store')->middleware('throttle:10,1');
+ Route::get('/dashboard',[DashboardController::class,'redirect'])->name('dashboard');
+ Route::middleware('role:warga')->group(function(){
+  Route::get('/pendaftaran/status',[RegistrationController::class,'status'])->name('registration.status');
+  Route::get('/pendaftaran/perbaiki',[RegistrationController::class,'edit'])->name('registration.edit');
+  Route::put('/pendaftaran/perbaiki',[RegistrationController::class,'update'])->name('registration.update');
+  Route::get('/warga',[ResidentBillingController::class,'dashboard'])->name('resident.dashboard');
+  Route::get('/warga/tagihan',[ResidentBillingController::class,'index'])->name('resident.invoices.index');
+  Route::get('/warga/tagihan/{invoice}/bayar',[ResidentBillingController::class,'pay'])->name('resident.invoices.pay');
+  Route::post('/warga/tagihan/{invoice}/bukti',[ResidentBillingController::class,'submit'])->name('resident.payments.submit')->middleware('throttle:10,1');
+  Route::get('/warga/tagihan/{invoice}/status',[ResidentBillingController::class,'status'])->name('resident.payments.status');
+  Route::get('/warga/laporan-keuangan',[CashReportController::class,'resident'])->name('resident.reports');
+  Route::get('/warga/laporan-keuangan/cetak',[CashReportController::class,'printResident'])->name('resident.reports.print');
+ });
+ Route::middleware('role:rt')->prefix('rt')->name('rt.')->group(function(){
+  Route::get('/',[DashboardController::class,'index'])->name('dashboard');
+  Route::get('/pendaftaran',[RtRegistrationController::class,'index'])->name('registrations.index');
+  Route::get('/pendaftaran/{applicant}',[RtRegistrationController::class,'show'])->name('registrations.show');
+  Route::post('/pendaftaran/{applicant}',[RtRegistrationController::class,'decide'])->name('registrations.decide');
+  Route::get('/data-warga',[RtResidentController::class,'index'])->name('houses.index');
+  Route::get('/data-warga/{residency}',[RtResidentController::class,'show'])->name('houses.show');
+  Route::put('/data-warga/{residency}',[RtResidentController::class,'update'])->name('houses.update')->middleware('throttle:20,1');
+  Route::post('/data-warga/{residency}/pindah',[RtResidentController::class,'move'])->name('houses.move')->middleware('throttle:20,1');
+ });
+ Route::get('/admin',[DashboardController::class,'index'])->middleware('role:admin')->name('admin.dashboard');
+ Route::middleware('role:admin')->group(function(){
+  Route::get('/admin/laporan',[CashReportController::class,'admin'])->name('admin.reports');
+  Route::post('/admin/laporan/tinjau',[CashReportController::class,'preview'])->name('admin.reports.preview');
+  Route::post('/admin/laporan/terbitkan',[CashReportController::class,'publish'])->name('admin.reports.publish')->middleware('throttle:10,1');
+ });
+ Route::middleware('role:bendahara')->prefix('bendahara')->name('treasurer.')->group(function(){
+  Route::get('/',[TreasurerBillingController::class,'dashboard'])->name('dashboard');
+  Route::get('/tagihan',[TreasurerBillingController::class,'index'])->name('invoices.index');
+  Route::get('/iuran/buat',[TreasurerBillingController::class,'create'])->name('periods.create');
+  Route::post('/iuran/tinjau',[TreasurerBillingController::class,'preview'])->name('periods.preview');
+  Route::post('/iuran/terbitkan',[TreasurerBillingController::class,'issue'])->name('periods.issue')->middleware('throttle:10,1');
+  Route::get('/pembayaran',[TreasurerBillingController::class,'submissions'])->name('payments.index');
+  Route::get('/pembayaran/{payment}',[TreasurerBillingController::class,'review'])->name('payments.review');
+  Route::post('/pembayaran/{payment}',[TreasurerBillingController::class,'decide'])->name('payments.decide')->middleware('throttle:20,1');
+  Route::get('/rekening',[TreasurerBillingController::class,'account'])->name('account');
+  Route::put('/rekening',[TreasurerBillingController::class,'saveAccount'])->name('account.save');
+  Route::get('/kas-laporan',[CashReportController::class,'cash'])->name('reports');
+  Route::post('/kas-laporan/saldo-pembukaan',[CashReportController::class,'configure'])->name('reports.opening')->middleware('throttle:10,1');
+  Route::post('/kas-laporan/transaksi',[CashReportController::class,'store'])->name('reports.store')->middleware('throttle:20,1');
+  Route::post('/kas-laporan/lengkapi-bukti',[CashReportController::class,'repair'])->name('reports.repair')->middleware('throttle:20,1');
+  Route::get('/kas-laporan/bukti/{kind}/{id}',[CashReportController::class,'proof'])->whereNumber('id')->name('reports.proof');
+  Route::get('/kas-laporan/cetak',[CashReportController::class,'printCash'])->name('reports.print');
+ });
+ Route::get('/bukti-pembayaran/{payment}',[ResidentBillingController::class,'proof'])->middleware('role:warga,bendahara')->name('payments.proof');
+});
