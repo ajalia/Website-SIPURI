@@ -1,0 +1,6 @@
+<form class="cash-card cash-filter" method="get" action="{{ url()->current() }}"><div class="row g-3 align-items-end">
+ <div class="col-sm-6 col-lg-3"><label class="form-label" for="cash-month">Bulan</label><select class="form-select" id="cash-month" name="month">@foreach(\App\Support\Dues::months() as $key=>$text)<option value="{{ $key }}" @selected($filters['month']===$key)>{{ $text }}</option>@endforeach</select></div>
+ <div class="col-sm-6 col-lg-2"><label class="form-label" for="cash-year">Tahun</label><input class="form-control" id="cash-year" type="number" min="2000" max="2100" name="year" value="{{ $filters['year'] }}" required></div>
+ @if(isset($publicationStatus))<div class="col-lg-3"><label class="form-label" for="publication-status">Status Publikasi</label><select class="form-select" name="publication_status" id="publication-status">@foreach(['all'=>'Semua Status','published'=>'Sudah Diterbitkan','unpublished'=>'Belum Diterbitkan','stale'=>'Perlu Diperbarui'] as $key=>$text)<option value="{{ $key }}" @selected($publicationStatus===$key)>{{ $text }}</option>@endforeach</select></div>@endif
+ <div class="col-lg-auto d-flex gap-2"><button class="btn btn-primary" type="submit"><x-login-icon name="search"/> Tampilkan</button><a class="btn btn-light" href="{{ url()->current() }}">Reset</a></div>
+</div></form>

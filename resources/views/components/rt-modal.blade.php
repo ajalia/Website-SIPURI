@@ -1,0 +1,2 @@
+@props(['id','title','reopen'=>false])
+<div class="modal fade rt-modal" id="{{ $id }}" tabindex="-1" aria-labelledby="{{ $id }}-title" aria-hidden="true" @if($reopen) data-auto-open @endif><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5" id="{{ $id }}-title">{{ $title }}</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Tutup"></button></div>{{ $slot }}</div></div></div>

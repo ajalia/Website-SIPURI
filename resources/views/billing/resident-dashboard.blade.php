@@ -1,0 +1,12 @@
+@extends('layouts.finance')
+@section('title','Beranda Warga')
+@section('content')
+<section class="finance-hero"><span>PORTAL WARGA RESMI · RW 07</span><h1>Selamat datang, {{ auth()->user()->name }}</h1><p>Lihat tagihan dan status pembayaran iuran lingkungan Anda.</p></section>
+<section class="rt-card finance-card mb-4"><h2><x-login-icon name="home"/> Data Rumah Tangga Warga</h2><p class="text-secondary">Data hunian akun yang disetujui RT.</p><div class="row g-3"><div class="col-sm-6 col-xl-3"><div class="finance-tile"><small>Penanggung Jawab</small><strong>{{ auth()->user()->name }}</strong></div></div><div class="col-sm-6 col-xl-3"><div class="finance-tile"><small>Rukun Tetangga</small><strong>{{ auth()->user()->rt?->label() }} · RW 07</strong></div></div><div class="col-sm-6 col-xl-3"><div class="finance-tile"><small>Alamat Hunian</small><strong><x-house-address :block="auth()->user()->house?->block ?? auth()->user()->latestResidency?->block ?? auth()->user()->block" :number="auth()->user()->house?->house_number ?? auth()->user()->latestResidency?->house_number ?? auth()->user()->house_number"/></strong></div></div><div class="col-sm-6 col-xl-3"><div class="finance-tile"><small>Status Tinggal</small><strong>{{ auth()->user()->latestResidency?->moved_at?'Sudah Pindah':'Disetujui RT' }}</strong></div></div></div></section>
+@include('billing.filters',['allMonths'=>true])
+<div class="row g-3 mb-4"><div class="col-sm-6"><div class="rt-card finance-stat finance-outstanding"><h2>Tagihan Belum Lunas</h2><strong>{{ $summary['pending']['count']+$summary['followup']['count'] }} Tagihan</strong></div></div><div class="col-sm-6"><div class="rt-card finance-stat finance-outstanding"><h2>Total Nominal Belum Selesai</h2><strong>{{ \App\Support\Dues::money($summary['pending']['amount']+$summary['followup']['amount']) }}</strong></div></div></div><x-dues-summary :summary="$summary"/>
+<p class="finance-note">Tagihan yang menunggu verifikasi tetap Belum Lunas hingga diterima Bendahara.</p>
+<div class="rt-section-heading"><h2>Tagihan Saya</h2><a href="{{ route('resident.invoices.index') }}">Lihat Semua Tagihan →</a></div>
+@include('billing.resident-table')
+<section class="rt-card finance-card mt-4"><h2>Laporan Keuangan Lingkungan</h2><p>Baca laporan keuangan lingkungan yang telah diterbitkan Admin.</p><a class="btn btn-light" href="{{ route('resident.reports') }}">Laporan Keuangan</a></section>
+@endsection

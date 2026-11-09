@@ -1,0 +1,10 @@
+@extends('layouts.finance')
+@section('title','Verifikasi Pembayaran')
+@section('page-title','Verifikasi Pembayaran')
+@section('content')
+<h1>Pengajuan Bukti Pembayaran</h1><p class="rt-description">Periksa bukti dan cocokkan dengan penerimaan dana sebelum mengambil keputusan.</p>
+@include('billing.filters',['allMonths'=>true,'allYears'=>true,'search'=>true,'submissionFilter'=>true,'statusOptions'=>['pending'=>'Menunggu Verifikasi','accepted'=>'Diterima','rejected'=>'Ditolak','all'=>'Semua Status']])
+<p><strong>{{ $payments->total() }} hasil sesuai filter.</strong></p>
+<p><strong>{{ $pendingCount }} pengajuan menunggu pemeriksaan</strong> pada periode dan pencarian terpilih.</p>
+<section class="rt-card rt-table-card"><table class="table rt-table align-middle mb-0"><thead><tr><th>Nama Warga</th><th>Alamat &amp; RT</th><th>Periode Tagihan</th><th>Nominal</th><th>Status Pengajuan</th><th>Aksi</th></tr></thead><tbody>@forelse($payments as $payment)<tr><td data-label="Nama"><strong>{{ $payment->invoice->resident_name }}</strong></td><td data-label="Alamat"><x-house-address :block="$payment->invoice->block" :number="$payment->invoice->house_number"/>, RT {{ str_pad((string)$payment->invoice->rt_number,2,'0',STR_PAD_LEFT) }}</td><td data-label="Periode">{{ $payment->invoice->period->label }}</td><td data-label="Nominal">{{ \App\Support\Dues::money($payment->amount) }}</td><td data-label="Status"><x-payment-status :status="$payment->status"/></td><td data-label="Aksi"><a class="btn btn-light" href="{{ route('treasurer.payments.review',array_merge(['payment'=>$payment->id],$navigationFilters)) }}">Periksa Pembayaran →</a></td></tr>@empty<tr><td colspan="6" class="rt-empty"><div class="rt-empty-stack"><x-login-icon name="receipt"/><h2>Tidak Ada Pengajuan</h2><p>Tidak ditemukan bukti yang sesuai dengan filter atau pencarian.</p><a class="btn btn-light" href="{{ route('treasurer.payments.index',['month'=>'','year'=>'','status'=>'pending']) }}">Reset Pencarian</a></div></td></tr>@endforelse</tbody></table><div class="rt-pagination">{{ $payments->links() }}</div></section>
+@endsection
