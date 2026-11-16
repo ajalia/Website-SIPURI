@@ -1,7 +1,7 @@
 @extends($layout)
 @section('title','Pengaturan Akun')
 @section('page-title','Pengaturan Akun')
-@section('card-width','stitch-wide')
+@section('card-width','frontend-wide')
 @section('content')
 @if($layout==='layouts.auth')@include('partials.messages')@endif
 <section class="account-card surface"><h1>Pengaturan Akun</h1><p class="text-secondary">Kelola kata sandi akun SIPURI Anda.</p><dl class="data-list mb-4"><div><dt>Nama</dt><dd>{{ $user->name }}</dd></div><div><dt>Username</dt><dd>{{ $user->username }}</dd></div><div><dt>Peran</dt><dd>{{ $user->role->label() }}</dd></div></dl>

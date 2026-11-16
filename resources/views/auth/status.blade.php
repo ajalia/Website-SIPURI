@@ -1,20 +1,20 @@
 @extends('layouts.auth')
 @section('title','Status Pendaftaran')
-@section('card-width','stitch-wide')
+@section('card-width','frontend-wide')
 @section('page-class','status-page')
 @section('content')
 @php($resident=auth()->user())
 @php($rejected=$resident->registration_status==='rejected')
-<section class="login-card stitch-card stitch-status-card {{ $rejected?'stitch-rejected':'stitch-pending' }}">
+<section class="login-card frontend-card frontend-status-card {{ $rejected?'frontend-rejected':'frontend-pending' }}">
     @include('partials.messages')
     <div class="text-center">
-        <div class="stitch-status-icon {{ $rejected?'stitch-icon-error':'stitch-icon-pending' }}"><x-login-icon :name="$rejected?'edit':'clock'"/></div>
-        <span class="stitch-status-badge {{ $rejected?'stitch-badge-error':'' }}">{{ $rejected?'Ditolak — Perlu Perbaikan':'Menunggu Verifikasi RT' }}</span>
+        <div class="frontend-status-icon {{ $rejected?'frontend-icon-error':'frontend-icon-pending' }}"><x-login-icon :name="$rejected?'edit':'clock'"/></div>
+        <span class="frontend-status-badge {{ $rejected?'frontend-badge-error':'' }}">{{ $rejected?'Ditolak — Perlu Perbaikan':'Menunggu Verifikasi RT' }}</span>
         <h1 class="mt-3">{{ $rejected?'Pendaftaran Anda Perlu Diperbaiki':'Pendaftaran Anda Sedang Ditinjau' }}</h1>
         <p class="login-intro">{{ $rejected?'Silakan pelajari catatan verifikasi dari pengurus RT, perbaiki data pendaftaran Anda, lalu ajukan kembali untuk pemeriksaan ulang.':'Data pendaftaran Anda telah tersimpan dan akan diperiksa oleh pengurus RT. Layanan warga dapat diakses setelah pendaftaran disetujui.' }}</p>
     </div>
     @if($rejected)<x-notice tone="error" icon="info" title="Catatan dari Pengurus RT"><p class="pre-wrap mb-0">{{ $resident->rejection_reason }}</p></x-notice>@endif
-    <section class="stitch-summary" aria-labelledby="summary-title">
+    <section class="frontend-summary" aria-labelledby="summary-title">
         <h2 id="summary-title"><x-login-icon name="person"/> {{ $rejected?'Rincian Data Pendaftaran Terkirim':'Ringkasan Pendaftaran' }}</h2>
         <dl class="row g-3 mb-0">
             <div class="col-sm-6"><dt>Nama Lengkap</dt><dd>{{ $resident->name }}</dd></div>
@@ -26,10 +26,10 @@
     </section>
     <x-notice tone="sage">Pengurus RT akan mencocokkan data pendaftaran dengan data rumah tangga. Jika membutuhkan bantuan, hubungi pengurus RT Anda.</x-notice>
     <div class="text-center mt-4">
-        @if($rejected)<a class="btn btn-primary stitch-action" href="{{ route('registration.edit') }}"><x-login-icon name="edit"/> Perbaiki Pendaftaran</a>
-        @else<a class="btn btn-primary stitch-action" href="{{ route('dashboard') }}"><x-login-icon name="refresh"/> Periksa Status</a>@endif
-        <a class="stitch-back-link" href="{{ route('home') }}">Kembali ke Beranda</a>
+        @if($rejected)<a class="btn btn-primary frontend-action" href="{{ route('registration.edit') }}"><x-login-icon name="edit"/> Perbaiki Pendaftaran</a>
+        @else<a class="btn btn-primary frontend-action" href="{{ route('dashboard') }}"><x-login-icon name="refresh"/> Periksa Status</a>@endif
+        <a class="frontend-back-link" href="{{ route('home') }}">Kembali ke Beranda</a>
     </div>
 </section>
-<aside class="stitch-context text-center"><p><x-login-icon name="home"/> Lingkungan Puri Indah Jatinangor • Sistem Administrasi RT Terpadu</p><p class="mb-0">Verifikasi dilakukan langsung oleh kepengurusan RT setempat demi menjaga keamanan dan akurasi data warga terdaftar.</p></aside>
+<aside class="frontend-context text-center"><p><x-login-icon name="home"/> Lingkungan Puri Indah Jatinangor • Sistem Administrasi RT Terpadu</p><p class="mb-0">Verifikasi dilakukan langsung oleh kepengurusan RT setempat demi menjaga keamanan dan akurasi data warga terdaftar.</p></aside>
 @endsection
