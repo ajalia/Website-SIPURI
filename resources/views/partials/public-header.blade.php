@@ -5,7 +5,7 @@
             <span><strong>SIPURI</strong><small>Perumahan Puri Indah Jatinangor</small></span>
         </a>
         @if(request()->routeIs('home'))
-            <button class="btn stitch-menu d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#public-navigation" aria-controls="public-navigation" aria-expanded="false" aria-label="Buka navigasi"><x-login-icon name="menu" /></button>
+            <button class="btn frontend-menu d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#public-navigation" aria-controls="public-navigation" aria-expanded="false" aria-label="Buka navigasi"><x-login-icon name="menu" /></button>
             <nav id="public-navigation" class="collapse d-lg-flex public-navigation" aria-label="Navigasi utama">
                 <a href="{{ route('home') }}" aria-current="page">Beranda</a>
                 <a href="{{ route('home') }}#profil">Profil</a><a href="{{ route('home') }}#fasilitas">Fasilitas</a><a href="{{ route('home') }}#kuliner">Kuliner</a><a href="{{ route('home') }}#pengurus">Pengurus</a>

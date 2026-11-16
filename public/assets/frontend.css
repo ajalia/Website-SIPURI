@@ -1,0 +1,160 @@
+.frontend-page{--primary:#145226;--primary-dark:#103f1e;--bs-link-color:#145226;--bs-link-color-rgb:20,82,38}
+.frontend-page *, .frontend-page *::before, .frontend-page *::after{box-sizing:border-box}
+.frontend-page .frontend-container{width:100%;max-width:480px;min-width:0}
+.frontend-page .frontend-wide{max-width:640px}
+.frontend-page .frontend-card{max-width:none;padding:40px;box-shadow:0 12px 20px -10px #11182730}
+.frontend-page .frontend-form{margin-top:24px}
+.frontend-page .frontend-field{margin-bottom:22px;min-width:0}
+.frontend-page .frontend-field .form-control,.frontend-page .form-select{height:50px;min-height:50px;padding:12px 16px;border-radius:9px;border-color:#f0f1f4;box-shadow:0 1px 2px #11182708;font-size:16px}
+.frontend-page .frontend-field .position-relative .form-control{padding-right:52px}
+.frontend-page .form-select{padding-right:36px;background-color:white}
+.frontend-page .form-select:focus{border-color:#145226;box-shadow:0 0 0 3px #14522620}
+.frontend-page .frontend-field .login-eye{top:3px;right:3px}
+.frontend-page .frontend-field .form-control.is-invalid,.frontend-page .form-select.is-invalid{border-color:#dc3545}
+.frontend-page .frontend-required{font-size:11px;color:#4b5563;white-space:nowrap}
+.frontend-page .form-text{font-size:13px;line-height:1.6}
+.frontend-page .frontend-notice{display:flex;align-items:flex-start;gap:10px;background:#f1f3ff;border-radius:12px;padding:18px;color:#414940;font-size:14px;line-height:1.6;margin:24px 0;overflow-wrap:anywhere}
+.frontend-page .frontend-notice>.login-icon{margin-top:3px;color:#145226;width:18px;height:18px}
+.frontend-page .frontend-notice strong{display:block;color:#145226;margin-bottom:2px;font-size:14px}
+.frontend-page .frontend-notice-error{background:#fff0f0;color:#6e2727}
+.frontend-page .frontend-notice-error strong,.frontend-page .frontend-notice-error>.login-icon{color:#b91c1c}
+.frontend-page .frontend-notice-sage{background:#ecf6df;color:#485d33}
+.frontend-page .frontend-help{padding:12px 18px;justify-content:center;text-align:center;margin-bottom:0;font-size:13px}
+.frontend-page .frontend-status-icon{display:grid;place-items:center;background:#e5f2d4;color:#145226;width:64px;height:64px;margin:0 auto 18px;border-radius:50%}
+.frontend-page .frontend-status-icon>.login-icon{width:30px;height:30px}
+.frontend-page .frontend-icon-pending{background:#fff6d9;color:#b76b00;width:80px;height:80px}
+.frontend-page .frontend-icon-error{background:#ffeded;color:#b91c1c}
+.frontend-page .frontend-status-badge{display:inline-block;border-radius:999px;background:#fffae8;color:#965200;padding:5px 16px;font-size:12px;font-weight:600;letter-spacing:.025em}
+.frontend-page .frontend-badge-error{color:#b91c1c;background:#ffeded}
+.frontend-page .frontend-status-card,.frontend-page .frontend-revision-card{position:relative;overflow:hidden;padding-top:40px}
+.frontend-page .frontend-status-card::before,.frontend-page .frontend-revision-card::before{content:'';position:absolute;inset:0 0 auto;height:6px;background:linear-gradient(90deg,#f59e0b,#eab308,#516538)}
+.frontend-page .frontend-rejected::before{background:linear-gradient(90deg,#ef4444,#b91c1c)}
+.frontend-page .frontend-revision-card::before{background:linear-gradient(90deg,#145226,#516538)}
+.frontend-page .frontend-summary{background:#f7f7ff;border-radius:12px;padding:24px;margin:28px 0 24px}
+.frontend-page .frontend-summary h2{display:flex;align-items:center;gap:8px;text-transform:uppercase;font-size:12px;letter-spacing:.05em;color:#414940;margin:0 0 22px;font-weight:600}
+.frontend-page .frontend-summary h2 .login-icon{width:18px;color:#516538}
+.frontend-page .frontend-summary dt{font-size:12px;font-weight:400;color:#4b5563;margin-bottom:4px}
+.frontend-page .frontend-summary dd{font-size:15px;font-weight:600;margin:0;overflow-wrap:anywhere}
+.frontend-page .frontend-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;min-width:220px}
+.frontend-page .frontend-back-link{display:table;margin:10px auto 0;min-height:44px;align-content:center;color:#4b5563}
+.frontend-page .frontend-context{background:#ffffffb3;border-radius:12px;padding:22px 26px;margin-top:28px;color:#4b5563;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.frontend-page .frontend-context p{margin-bottom:6px}
+.frontend-page .frontend-context .login-icon{color:#516538;width:16px;height:16px}
+.frontend-page .frontend-breadcrumb{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;margin:0 0 18px;color:#4b5563}
+.frontend-page .frontend-breadcrumb a{color:#4b5563;text-decoration:none}
+.frontend-page .frontend-edit-icon{display:grid;place-items:center;flex-shrink:0;width:46px;height:46px;background:#2f6b3c;color:#fff;border-radius:12px}
+
+.frontend-page .frontend-revision-card h1{font-size:24px}
+.frontend-page .frontend-revision-card .form-control,.frontend-page .frontend-revision-card .form-select{background-color:#f1f3ff}
+.frontend-page .frontend-revision-card .form-control[readonly]{background:#e9edff;color:#4b5563}
+.frontend-page .frontend-form-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:30px}
+.frontend-page .frontend-cancel{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;color:#4b5563;text-decoration:none}
+.frontend-page.password-page h1{font-size:24px}
+.frontend-page.password-page .frontend-card{padding:32px}
+.frontend-page .login-header-inner{row-gap:8px}
+.frontend-page .login-header nav form .btn{padding:8px 16px;min-height:44px}
+.frontend-page .public-navigation{gap:12px;align-items:center}
+.frontend-page .public-navigation>a{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;min-height:44px;text-decoration:none;color:#414940;font-size:14px;font-weight:500}
+.frontend-page .public-navigation>a[aria-current]{border-radius:99px;background:#f1f3ff;color:#145226}
+.frontend-page .public-navigation>a.btn{color:white;min-width:90px}
+.frontend-page .frontend-menu{background:#e5f2d4;color:#145226;padding:10px}
+.frontend-page.home-page .login-main{display:block;padding:0}
+.frontend-page.home-page .frontend-container{max-width:none}
+.frontend-page .public-width{width:100%;max-width:1280px;padding-left:32px;padding-right:32px;margin-left:auto;margin-right:auto}
+.frontend-page .public-hero{background:#2f6b3c;color:white;padding:56px 0 88px;border-radius:0 0 50% 5% / 0 0 6% 3%}
+.frontend-page .public-hero .login-badge,.frontend-page .public-service .login-badge{color:#e5f2d4;background:#ffffff20}
+.frontend-page .public-hero h1{font-size:clamp(36px,4vw,54px);line-height:1.2;margin-bottom:20px;letter-spacing:-.035em;color:white}
+.frontend-page .public-hero p{font-size:18px;color:#e5eddc;max-width:560px}
+.frontend-page .public-hero-link{display:inline-flex;gap:8px;align-items:center;color:white;text-decoration:none;padding:10px 16px;min-height:44px}
+.frontend-page .public-trust{font-size:12px;color:#d3ebb2}
+.frontend-page .public-trust .login-icon{width:16px;height:16px}
+.frontend-page .public-hero-image,.frontend-page .public-profile-image{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 10px 20px #0000001a}
+.frontend-page .public-hero-image img{width:100%;height:340px;object-fit:cover;display:block}
+.frontend-page .public-hero-image figcaption{position:absolute;inset:auto 0 0;padding:35px 18px 18px;background:linear-gradient(transparent,#163b21e6);display:flex;flex-direction:column;font-size:13px}
+.frontend-page .public-hero-image figcaption strong{text-transform:uppercase;color:#d3ebb2;font-size:11px;letter-spacing:.05em}
+.frontend-page .public-image-chip{position:relative;display:table;margin:-6px 0 0 -12px;padding:4px 14px;border-radius:99px;background:white;color:#145226;font-size:11px;box-shadow:0 3px 8px #0002}
+.frontend-page .public-image-chip .login-icon{width:14px;height:14px}
+.frontend-page .public-register-strip{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;width:calc(100% - 64px);max-width:1100px;margin-top:-28px;background:white;border-radius:16px;padding:24px;box-shadow:0 10px 18px #1118271a}
+.frontend-page .public-register-strip strong{font-size:16px}
+.frontend-page .public-register-strip p{font-size:13px;color:#4b5563}
+.frontend-page .public-register-strip .btn{white-space:normal;flex-shrink:0}
+.frontend-page .public-round-icon{display:inline-grid;place-items:center;width:40px;height:40px;background:#d3ebb2;color:#2f6b3c;border-radius:50%;flex-shrink:0}
+.frontend-page .public-section{padding-top:80px;padding-bottom:80px;scroll-margin-top:24px}
+.frontend-page .public-section h2,.frontend-page .public-service h2{font-size:32px;font-weight:700;letter-spacing:-.025em;margin-bottom:14px}
+.frontend-page .public-description{color:#4b5563;max-width:680px;font-size:16px}
+.frontend-page .public-profile-image img{width:100%;height:510px;object-fit:cover;display:block}
+.frontend-page .public-profile-image figcaption{position:absolute;bottom:18px;left:18px;right:18px;background:#ffffffed;padding:12px 16px;border-radius:8px;font-size:14px;font-weight:600}
+.frontend-page .public-profile-image figcaption small{display:block;margin-left:24px;font-size:12px;font-weight:400;color:#4b5563}
+.frontend-page .public-feature{height:100%;background:white;border:1px solid #f0f1f3;border-radius:12px;padding:18px}
+.frontend-page .public-feature h3{font-size:16px;font-weight:600;margin:12px 0 8px}
+.frontend-page .public-feature p{font-size:13px;color:#4b5563;margin:0}
+.frontend-page .public-tinted{background:#f1f3ff}
+.frontend-page .public-section-heading{text-align:center;max-width:800px;margin:0 auto 40px}
+.frontend-page .public-section-heading p{color:#4b5563;margin:0}
+.frontend-page .public-content-card{height:100%;background:white;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden}
+.frontend-page .public-card-image{position:relative}
+.frontend-page .public-card-image img{width:100%;height:210px;object-fit:cover;display:block}
+.frontend-page .public-card-image>span{position:absolute;left:14px;top:14px;background:#ffffffed;border-radius:99px;padding:3px 10px;font-size:11px;color:#145226}
+.frontend-page .public-card-body{padding:24px}
+.frontend-page .public-content-card h3{font-size:18px;font-weight:600;margin-bottom:10px}
+.frontend-page .public-content-card p{font-size:14px;color:#4b5563}
+.frontend-page .public-availability{display:inline-block;background:#edf4e4;color:#425530;border-radius:99px;padding:4px 10px;font-size:11px}
+.frontend-page .public-empty-image{height:220px;background:#f1f3ff;color:#64748b;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font-size:12px}
+.frontend-page .public-empty-image .login-icon{width:38px;height:38px;background:#e1e8fd;border-radius:50%;padding:8px;color:#516538}
+.frontend-page .public-avatar{display:grid;place-items:center;margin:0 auto 20px;background:#e1e8fd;color:#516538;width:76px;height:76px;border-radius:50%}
+.frontend-page .public-avatar .login-icon{width:36px;height:36px}
+.frontend-page .public-service-wrap{padding-top:16px;padding-bottom:80px}
+.frontend-page .public-service{background:linear-gradient(110deg,#2f6b3c,#365e36);border-radius:24px;padding:48px;color:white;box-shadow:0 8px 14px #1118271a}
+.frontend-page .public-service p{max-width:800px;color:#e5eddc}
+.frontend-page .public-service span:not(.login-badge){font-size:13px}
+.frontend-page .public-footer{background:#2f6b3c;color:#e5eddc;padding:64px 0 24px;font-size:14px}
+.frontend-page .public-footer .login-brand{color:white}
+.frontend-page .public-footer .login-brand small{color:#e5eddc}
+.frontend-page .public-footer .login-brand-mark{background:#d3ebb2;color:#2f6b3c}
+.frontend-page .public-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:16px}
+.frontend-page .public-footer nav{display:flex;flex-direction:column;align-items:flex-start}
+.frontend-page .public-footer nav a{color:#e5eddc;text-decoration:none;min-height:36px;display:inline-flex;align-items:center}
+.frontend-page .public-footer a:hover{text-decoration:underline}
+.frontend-page .public-footer-bottom{border-top:1px solid #ffffff24;margin-top:40px;padding-top:24px;font-size:12px}
+@media(max-width:991.98px){
+ .frontend-page .public-navigation{width:100%;padding-bottom:8px}
+ .frontend-page .public-navigation>a{display:flex;justify-content:flex-start;min-height:44px}
+ .frontend-page .public-navigation>a.btn{display:inline-flex;padding-left:24px;padding-right:24px;margin-top:8px}
+ .frontend-page .public-hero{padding-top:32px}
+ .frontend-page .public-hero-image img{height:340px}
+ .frontend-page .public-profile-image img{height:380px}
+}
+@media(max-width:575.98px){
+ .frontend-page .frontend-card{padding:28px 24px}
+ .frontend-page .frontend-container{min-width:0}
+ .frontend-page .login-header-inner{padding:10px 16px;column-gap:8px}
+ .frontend-page .login-header nav{gap:8px!important}
+ .frontend-page .login-header nav form .btn{padding:8px 12px;font-size:12px}
+ .frontend-page .login-back{max-width:125px;font-size:12px}
+ .frontend-page .frontend-notice{padding:14px;font-size:13px}
+ .frontend-page .frontend-summary{padding:20px}
+ .frontend-page .frontend-status-card h1{font-size:26px}
+ .frontend-page .frontend-form-actions{flex-direction:column-reverse;align-items:stretch;gap:8px}
+ .frontend-page .frontend-cancel{justify-content:center}
+ .frontend-page .frontend-context{padding:18px;font-size:12px}
+ .frontend-page.password-page .frontend-card{padding:28px 24px}
+ .frontend-page .public-width{padding-left:16px;padding-right:16px}
+ .frontend-page .public-section{padding-top:48px;padding-bottom:48px}
+ .frontend-page .public-hero{padding-bottom:60px;border-radius:0 0 35% 5% / 0 0 2% 2%}
+ .frontend-page .public-hero h1{font-size:36px}
+ .frontend-page .public-hero p{font-size:16px}
+ .frontend-page .public-hero>.row{--bs-gutter-x:0}
+ .frontend-page .public-hero-image img{height:260px}
+ .frontend-page .public-image-chip{margin-left:0}
+ .frontend-page .public-register-strip{width:calc(100% - 32px);padding:20px;flex-direction:column;align-items:stretch}
+ .frontend-page .public-register-strip .btn{width:100%}
+ .frontend-page .public-register-strip strong{font-size:15px}
+ .frontend-page .public-section h2,.frontend-page .public-service h2{font-size:28px}
+ .frontend-page .public-profile-image img{height:360px}
+ .frontend-page .public-section-heading{margin-bottom:28px}
+ .frontend-page .public-service-wrap{padding-bottom:48px}
+ .frontend-page .public-service{padding:28px 24px;border-radius:16px}
+ .frontend-page .public-footer{padding-top:40px}
+ .frontend-page .public-footer nav a{min-height:44px}
+ .frontend-page .login-footer-inner>span{white-space:normal}
+}

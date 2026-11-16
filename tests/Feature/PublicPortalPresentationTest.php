@@ -63,7 +63,7 @@ class PublicPortalPresentationTest extends TestCase
         $rt = Rt::create(['number'=>1, 'is_active'=>true]);
         $user = User::factory()->create(['rt_id'=>$rt->id, 'role'=>Role::Rt, 'registration_status'=>'approved']);
         $this->actingAs($user)->get('/')->assertOk()->assertSee('Buka Portal Anda');
-        $this->get('/rt')->assertOk()->assertDontSee('assets/stitch.css')->assertDontSee('assets/login.css');
+        $this->get('/rt')->assertOk()->assertDontSee('assets/frontend.css')->assertDontSee('assets/login.css');
         $user->must_change_password = true;
         $user->save();
         $this->get('/kata-sandi-awal')->assertOk()->assertSee(route('logout'), false)
